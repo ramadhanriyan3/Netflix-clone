@@ -18,7 +18,7 @@ const SignIn = () => {
       await signIn("credentials", {
         email,
         password,
-        redirect: false,
+        redirect: true,
         callbackUrl: "/profile",
       });
       navigate.push("/profile");

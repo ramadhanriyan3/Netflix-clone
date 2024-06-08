@@ -1,6 +1,6 @@
 import { without } from "lodash";
-import { getUserSession } from "../../../../lib/userSession";
-import prismadb from "../../../../lib/prismadb";
+import { getUserSession } from "../../../lib/userSession";
+import prismadb from "../../../lib/prismadb";
 
 export async function POST(req: Request) {
   const user = await getUserSession();

@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import prismadb from "../../../../lib/prismadb";
+import prismadb from "../../../lib/prismadb";
 
 export async function POST(req: Request) {
   const data = await req.formData();

@@ -7,7 +7,7 @@ import {
 import { BsFillPlayFill } from "react-icons/bs";
 import FavButton from "./favButton";
 import { useContext } from "react";
-import { MovieInfoContext, MovieDispatchContext } from "@/lib/movieContext";
+import { MovieInfoContext, MovieDispatchContext } from "@/context/context";
 import { RiCloseCircleLine } from "react-icons/ri";
 import { useRouter } from "next/navigation";
 

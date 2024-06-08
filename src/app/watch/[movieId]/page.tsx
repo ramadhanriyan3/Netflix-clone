@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { AiOutlineArrowLeft } from "react-icons/ai";
-import useMovie from "../../../../hooks/useMovie";
+import useMovie from "../../../hooks/useMovie";
 
 const Watch = ({ params }: { params: { movieId: string } }) => {
   const navigate = useRouter();

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
-import { getUserSession } from "../../../../lib/userSession";
-import prismadb from "../../../../lib/prismadb";
+import { getUserSession } from "../../../lib/userSession";
+import prismadb from "../../../lib/prismadb";
 
 export async function GET() {
   const sessionUser = await getUserSession();

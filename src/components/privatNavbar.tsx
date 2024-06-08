@@ -6,6 +6,7 @@ import AccountMenu from "./AccountMenu";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import useCurrentUser from "../hooks/useCurrentUser";
 import { BsChevronDown, BsSearch, BsBell } from "react-icons/bs";
 
 const TOP_OFFSET = 66;
@@ -15,6 +16,8 @@ const PrivateNavbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [showAccountMenu, setShowAccountMenu] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
+
+  const { data } = useCurrentUser();
 
   //   make navbar being black when scroll down
   useEffect(() => {
@@ -91,7 +94,7 @@ const PrivateNavbar = () => {
               <div className="w-6 h-6 lg:w-10 lg:h-10 rounded-md overflow-hidden">
                 <Image
                   alt="ava"
-                  src={"/Netflix-avatar.png"}
+                  src={data?.image || "/Netflix-avatar.png"}
                   width={50}
                   height={50}
                 />

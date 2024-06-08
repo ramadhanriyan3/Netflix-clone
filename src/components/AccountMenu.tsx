@@ -1,7 +1,10 @@
 import { signOut } from "next-auth/react";
 import Image from "next/image";
+import useCurrentUser from "../hooks/useCurrentUser";
 
 const AccountMenu = ({ visible }: { visible: boolean }) => {
+  const { data } = useCurrentUser();
+
   if (!visible) {
     return null;
   }
@@ -12,13 +15,13 @@ const AccountMenu = ({ visible }: { visible: boolean }) => {
         <div className="px-3 gap-2 group/item flex items-center">
           <Image
             className="w-8 rounded-md"
-            src={"/Netflix-avatar.png"}
+            src={data.image || "/Netflix-avatar.png"}
             alt="ava"
             width={30}
             height={30}
           />
           <p className="text-white text-sm group-hover/item:underline">
-            Username
+            {data.name}
           </p>
         </div>
         <hr className="bg-gray-600 border-0 h-px my-2 " />

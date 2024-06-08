@@ -6,7 +6,7 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 import FavButton from "./favButton";
 import { useRouter } from "next/navigation";
 import { useContext } from "react";
-import { MovieDispatchContext } from "@/lib/movieContext";
+import { MovieDispatchContext } from "@/context/context";
 
 interface MovieProp {
   data: Record<string, any>;

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Spinner from "../../components/spinner";
 import { useRouter } from "next/navigation";
-import useCurrentUser from "../../../hooks/useCurrentUser";
+import useCurrentUser from "../../hooks/useCurrentUser";
 
 const Profile = () => {
   const navigate = useRouter();
@@ -12,7 +12,7 @@ const Profile = () => {
   console.log(data);
 
   return (
-    <main className="flex items-center h-full justify-center">
+    <main className="flex items-center h-screen justify-center bg-black ">
       {isLoading ? (
         <Spinner size={100} />
       ) : (
@@ -25,7 +25,7 @@ const Profile = () => {
               <div className="group flex-row w-44 mx-auto">
                 <div className="w-44 h-44 rounded-md flex items-center justify-center border-2 border-transparent group-hover:cursor-pointer group-hover:border-white overflow-hidden">
                   <Image
-                    src={"/Netflix-avatar.png"}
+                    src={data.image || "/Netflix-avatar.png"}
                     alt="ava"
                     width={400}
                     height={400}

@@ -18,8 +18,8 @@ const SignIn = () => {
       await signIn("credentials", {
         email,
         password,
-        redirect: true,
-        callbackUrl: "/profile",
+        redirect: false,
+        callbackUrl: "/",
       });
       navigate.push("/profile");
     } catch (err) {
@@ -111,7 +111,7 @@ const SignIn = () => {
       </h3>
       <div
         className="w-fit p-1 rounded-full bg-white mb-4 hover:opacity-80 transition cursor-pointer"
-        onClick={() => signIn("google", { callbackUrl: "/home" })}
+        onClick={() => signIn("google", { callbackUrl: "/profile" })}
       >
         <FcGoogle size={40} enableBackground={"white"} />
       </div>

@@ -1,8 +1,8 @@
-import useBillboard from "../../hooks/useBilboard";
+import useBillboard from "../hooks/useBilboard";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import PlayButton from "./playButton";
 import { useContext } from "react";
-import { MovieDispatchContext, MovieInfoContext } from "@/lib/movieContext";
+import { MovieDispatchContext, MovieInfoContext } from "@/context/context";
 
 const Billboard = () => {
   const { data } = useBillboard();
@@ -18,11 +18,6 @@ const Billboard = () => {
     };
 
     dispatch(movieInfoState);
-
-    console.log({ movieInfoState });
-
-    console.log("kehit");
-    console.log({ globalState });
   };
   return (
     <div className="relative h-[56.25vw]">

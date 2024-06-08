@@ -54,3 +54,29 @@ export const MovieInfoContext = createContext<MovieType>(initialMovieInfo);
 export const MovieDispatchContext = createContext<Dispatch<MovieAction>>(
   () => undefined
 );
+
+// SignUp Email context
+interface EmailActionType {
+  type: string;
+  payload: string;
+}
+
+export const emailReducer = (state: string, action: EmailActionType) => {
+  switch (action.type) {
+    case "UPDATE":
+      return action.payload;
+
+    default:
+      return state;
+  }
+};
+
+interface SignUpEmailContextType {
+  state: string;
+  dispatch: Dispatch<EmailActionType>;
+}
+
+export const SignUpEmailContext = createContext<SignUpEmailContextType>({
+  state: "",
+  dispatch: () => undefined,
+});

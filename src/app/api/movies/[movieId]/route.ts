@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import prismadb from "./../../../../../lib/prismadb";
+import prismadb from "../../../../lib/prismadb";
 
 export async function GET(req: NextRequest) {
   const pathname = req.nextUrl.pathname.split("/");

@@ -3,11 +3,11 @@
 import PrivateNavbar from "../../components/privatNavbar";
 import Billboard from "../../components/Billboard";
 import MovieList from "../../components/MovieList";
-import useMovieList from "../../../hooks/useMovieList";
-import useFavorites from "../../../hooks/useFavorites";
-import { MovieInfoContext, MovieDispatchContext } from "@/lib/movieContext";
+import useMovieList from "../../hooks/useMovieList";
+import useFavorites from "../../hooks/useFavorites";
+import { MovieInfoContext, MovieDispatchContext } from "@/context/context";
 import { useReducer } from "react";
-import { movieReducers, initialMovieInfo } from "@/lib/movieContext";
+import { movieReducers, initialMovieInfo } from "@/context/context";
 import ModalInfo from "@/components/modalInfo";
 
 const Home = () => {

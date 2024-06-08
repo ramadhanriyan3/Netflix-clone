@@ -9,7 +9,7 @@ import {
   AiFillCaretDown,
   AiFillCaretUp,
 } from "react-icons/ai";
-import { faq } from "../../lib/constant";
+import { faq } from "../lib/constant";
 
 interface AcordionState {
   index: number | null;

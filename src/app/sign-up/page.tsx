@@ -2,16 +2,18 @@
 
 import Navbar from "@/components/navbar";
 import axios from "axios";
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import Spinner from "../../components/spinner";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { SignUpEmailContext } from "@/context/context";
 
 const SignUp = () => {
   const [visible, setVisible] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useRouter();
+  const { emailState } = useContext(SignUpEmailContext);
 
   const login = async (email: string, password: string) => {
     try {
@@ -94,6 +96,8 @@ const SignUp = () => {
                 type="text"
                 placeholder=" "
                 name="email"
+                readOnly
+                defaultValue={emailState}
                 className="block rounded-md px-6 pt-6 pb-1 wfull text-md text-white bg-neutral-900 appearance-none focus:outline-none focus:ring-0 peer w-full"
               />
               <label

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "../components/navbar";
 import {
@@ -10,6 +10,7 @@ import {
   AiFillCaretUp,
 } from "react-icons/ai";
 import { faq } from "../lib/constant";
+import { SignUpEmailContext } from "@/context/context";
 
 interface AcordionState {
   index: number | null;
@@ -17,6 +18,8 @@ interface AcordionState {
 }
 
 export default function Homepage() {
+  const { signUpDispatch } = useContext(SignUpEmailContext);
+
   const navigate = useRouter();
   const [isOpen, setIsOpen] = useState<AcordionState>({
     index: null,
@@ -29,9 +32,7 @@ export default function Homepage() {
       email: { value: string };
     };
 
-    console.log(target.email.value);
-
-    // disini handle grobal state atau context
+    signUpDispatch({ type: "UPDATE", payload: target.email.value });
     navigate.push("/sign-up");
   };
 

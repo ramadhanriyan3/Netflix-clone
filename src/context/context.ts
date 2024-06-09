@@ -72,11 +72,11 @@ export const emailReducer = (state: string, action: EmailActionType) => {
 };
 
 interface SignUpEmailContextType {
-  state: string;
-  dispatch: Dispatch<EmailActionType>;
+  emailState: string;
+  signUpDispatch: Dispatch<EmailActionType>;
 }
 
 export const SignUpEmailContext = createContext<SignUpEmailContextType>({
-  state: "",
-  dispatch: () => undefined,
+  emailState: "",
+  signUpDispatch: () => undefined,
 });

@@ -2,14 +2,12 @@ import useBillboard from "../hooks/useBilboard";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import PlayButton from "./playButton";
 import { useContext } from "react";
-import { MovieDispatchContext, MovieInfoContext } from "@/context/context";
+import { MovieDispatchContext } from "@/context/context";
 
 const Billboard = () => {
   const { data } = useBillboard();
 
   const dispatch = useContext(MovieDispatchContext);
-  const globalState = useContext(MovieInfoContext);
-
   const handleOpenModal = () => {
     console.log(data);
     const movieInfoState = {

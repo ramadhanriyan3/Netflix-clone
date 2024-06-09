@@ -23,3 +23,17 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
+// async headers() {
+//   return [
+//     {
+//       source: "/home",
+//       headers: [
+//         {
+//           key: "Cache-Control",
+//           value: "no-cache, no-store, must-revalidate",
+//         },
+//       ],
+//     },
+//   ];
+// },

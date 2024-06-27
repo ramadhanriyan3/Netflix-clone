@@ -29,6 +29,7 @@ const MovieCard = ({ data }: MovieProp) => {
   return (
     <div className="group bg-zinc-900 col-span relative h-[12vw]">
       <Image
+        onClick={() => navigate.push(`/watch/${data.id}`)}
         layout="fill"
         objectFit="cover"
         className="cursor-pointer object-cover transition duration shadow-xl rounded-md group-hover:opacity-90 sm:group-hover:opacity-0 delay-300 w-full h-[12vw]"
@@ -37,6 +38,7 @@ const MovieCard = ({ data }: MovieProp) => {
       />
       <div className="opacity-0 absolute top-0 transition duration-200 z-10 invisible sm:visible delay-200 w-full scale-0 group-hover:scale-[1.1] group-hover:-translate-y-[6vw] group-hover:translate-x-[2vw] group-hover:opacity-100">
         <Image
+          onClick={() => navigate.push(`/watch/${data.id}`)}
           alt="thumbnail"
           layout="responsive"
           src={data.thumbnailUrl}

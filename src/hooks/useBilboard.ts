@@ -5,8 +5,9 @@ import { fetcher } from "../lib/fetcher";
 
 const useBillboard = () => {
   const { data, error, isLoading } = useSWR("/api/random", fetcher, {
-    revalidateIfStale: true,
-    revalidateOnMount: true,
+    revalidateIfStale: false,
+    revalidateOnMount: false,
+    revalidateOnReconnect: false,
   });
 
   return {

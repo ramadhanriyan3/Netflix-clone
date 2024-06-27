@@ -24,6 +24,7 @@ const SignIn = () => {
       navigate.push("/profile");
     } catch (err) {
       console.log(err);
+      alert(err);
     }
   };
 

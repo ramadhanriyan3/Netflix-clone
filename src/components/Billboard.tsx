@@ -17,6 +17,7 @@ const Billboard = () => {
 
     dispatch(movieInfoState);
   };
+
   return (
     <div className="relative h-[56.25vw]">
       <video

@@ -31,6 +31,7 @@ const MovieCard = ({ data }: MovieProp) => {
       <Image
         onClick={() => navigate.push(`/watch/${data.id}`)}
         layout="fill"
+        sizes="responsive"
         objectFit="cover"
         className="cursor-pointer object-cover transition duration shadow-xl rounded-md group-hover:opacity-90 sm:group-hover:opacity-0 delay-300 w-full h-[12vw]"
         alt="thumbnail"
